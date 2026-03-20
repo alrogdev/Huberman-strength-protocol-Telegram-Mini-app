@@ -39,7 +39,11 @@
 | `UPSTASH_REDIS_REST_URL` | URL Upstash Redis REST API |
 | `UPSTASH_REDIS_REST_TOKEN` | Токен Upstash Redis REST API |
 
-## Развёртывание
+## Развёртывание в один клик
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Falrogdev%2FHuberman-strength-protocol-Telegram-Mini-app&project-name=huberman-tma&repository-name=huberman-tma&env=TELEGRAM_BOT_TOKEN%2CUPSTASH_REDIS_REST_URL%2CUPSTASH_REDIS_REST_TOKEN&envDescription=Telegram+Bot+Token+from+BotFather%2C+Upstash+Redis+REST+URL+and+Token+from+Upstash+Console)
+
+Нажмите кнопку выше — Vercel запросит три переменные окружения (см. ниже).
 
 ### 1. Создайте базу Upstash Redis
 
@@ -47,30 +51,15 @@
 2. Создайте новую Redis-базу (регион: EU-West-1 или ближайший)
 3. Скопируйте `UPSTASH_REDIS_REST_URL` и `UPSTASH_REDIS_REST_TOKEN`
 
-### 2. Задеплойте на Vercel
+### 2. Введите переменные окружения
 
-```bash
-# Клонируйте репозиторий
-git clone https://github.com/alrogdev/Huberman-strength-protocol-Telegram-Mini-app.git
-cd Huberman-strength-protocol-Telegram-Mini-app
+| Переменная | Значение |
+|---|---|
+| `TELEGRAM_BOT_TOKEN` | Токен бота из @BotFather |
+| `UPSTASH_REDIS_REST_URL` | URL из консоли Upstash |
+| `UPSTASH_REDIS_REST_TOKEN` | Токен из консоли Upstash |
 
-# Установите зависимости
-npm install
-
-# Задеплойте
-vercel --prod
-```
-
-Или подключите репозиторий через [Vercel Dashboard](https://vercel.com/new).
-
-### 3. Настройте переменные окружения в Vercel
-
-В разделе Settings → Environment Variables добавьте:
-- `TELEGRAM_BOT_TOKEN` = ваш токен бота
-- `UPSTASH_REDIS_REST_URL` = URL из Upstash
-- `UPSTASH_REDIS_REST_TOKEN` = токен из Upstash
-
-### 4. Настройте Mini App в BotFather
+### 3. Настройте Mini App в BotFather
 
 ```
 /setmenubutton
@@ -80,9 +69,20 @@ vercel --prod
 - URL: `https://ваш-домен.vercel.app`
 - Текст кнопки: `Трекер`
 
-### 5. Откройте приложение
+### 4. Откройте приложение
 
 Перейдите в чат с ботом @Fittram_bot и нажмите кнопку меню.
+
+### Ручной деплой (альтернатива)
+
+```bash
+git clone https://github.com/alrogdev/Huberman-strength-protocol-Telegram-Mini-app.git
+cd Huberman-strength-protocol-Telegram-Mini-app
+npm install
+vercel --prod
+```
+
+Или подключите репозиторий через [Vercel Dashboard](https://vercel.com/new).
 
 ## Локальная разработка
 
